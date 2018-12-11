@@ -8,9 +8,12 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
     stage('Email Notification'){
-      mail bcc: '', body: '''Hi Welcome to jenkins email alerts
-      Thanks
-      Shrinath''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'shrinathdm@gmail.com'
+    emailext attachLog: true, body: '''Hi,
+
+     Welcome to jenkins email alerts
+
+     Thanks,
+     Shrinath''', subject: 'jenkins alert', to: 'shrinathdm@gmail.com'
    }
 }
 
