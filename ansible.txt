@@ -1,0 +1,116 @@
+https://www.bogotobogo.com/DevOps/Ansible/Ansible-aws-creating-ec2-instance.php
+
+https://www.infinitypp.com/ansible/create-aws-resources-using-ansible/
+
+https://www.reddit.com/r/ansible/comments/89pmjy/updating_ansible_to_25_using_yum/
+
+
+EBS-Snapshot
+https://www.codebyamir.com/blog/automated-ebs-snapshots-using-aws-lambda-cloudwatch?rq=ebs-snapshot
+
+https://github.com/adithyakhamithkar/ansible-playbooks
+
+
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#directory-layout
+
+ ansible-playbook  -vvvv -i inventory/demo playbook/site.yml --extra-vars "@./inventory/group_vars/demo.yml"
+
+ git add . && git commit -m update && git push origin master
+ 
+ 
+ 1.	One VirtualBox VM, install Ubuntu 16.04  or 18.04 LTS Server edition through iso file
+
+https://www.tecmint.com/network-between-guest-vm-and-host-virtualbox/
+
+
+2.	Following items to be done in OS level
+-	Create a system user called ‘ansible’
+-	Create ssh -key pairs for Ansible user ( ssh-keygen –t rsa  -f ansible.pem )
+             https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/
+
+-	Install pip in OS 
+ Install pip.
+https://linuxize.com/post/how-to-install-pip-on-centos-7/
+
+-	Install Ansible only in ansible system user space ( pip install ansible  --user )
+-	Install aws cli only in ansible  system user  (https://docs.aws.amazon.com/cli/latest/userguideve/awscli-install-bundle.html#install-bundle-user )
+
+3.	In your Laptop
+-	install git-bash (https://gitforwindows.org/ )
+-	Install any editor  (Sublime or Atom or any of your favorite )
+4.	For practice, you should have Git account . 
+5.	Learning materials – 
+-	https://www.ansible.com/resources/videos/quick-start-video  (Mandatory)
+-	https://docs.ansible.com/  (‘Ansible Project’ section only )
+
+[ansible@hildzl66269-v2 ~]$ cat ~/.ssh/id_rsa.pub | ssh root@hildzl66269-v2.ad.harman.com "cat >> ~/.ssh/authorized_keys"
+
+shriubuntu/Ansible123
+
+shriubuntu@192.168.56.102
+
+Playbooks contain Plays
+Plays contain Tasks
+Tasks call modul
+
+Tasks run sequentially
+Handlers are triggered by tasks, and run once, at the end of plays.
+
+Ansible Towera
+Galaxy
+
+--/etc/login.defs - Configuration control definitions for the login package.
+
+ ansible-playbook -i inventory/demo playbook/site.yml
+
+	 ansible-playbook -i inventory/demo playbook/site.yml --check
+
+https://docs.ansible.com/ansible/2.6/modules/user_module.html
+
+Sublime -- https://www.sublimetext.com/3
+
+Ubuntu 18.04 --  https://www.ubuntu.com/download/server/thank-you?country=IN&version=18.04.1&architecture=amd64
+
+Create ssh -key pairs for Ansible user https://www.howtoforge.com/tutorial/setup-new-user-and-ssh-key-authentication-using-ansible/
+
+Install PIP 
+$ sudo apt update
+$ sudo apt install python-pip
+
+From <https://linuxconfig.org/how-to-install-pip-on-ubuntu-18-04-bionic-beaver> 
+
+python-pip is in the universe repositories, therefore use the steps below:
+sudo apt-get install software-properties-common
+sudo apt-add-repository universe
+sudo apt-get update
+sudo apt-get install python-pip
+
+From <https://askubuntu.com/questions/672808/sudo-apt-get-install-python-pip-is-failing> 
+
+
+
+ansible@shriubuntu:~/SETUP/ansiblepractice$ ansible -m ping localhost
+ [WARNING]: Unable to parse /etc/ansible/hosts as an inventory source
+
+ [WARNING]: No inventory was parsed, only implicit localhost is available
+
+ [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+localhost | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#directory-layout
+
+ ansible-playbook  -vvvv -i inventory/demo playbook/site.yml --extra-vars "@./inventory/group_vars/demo.yml"
+
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+  421  git stash
+  422  git status
+  425  mv ansiblepractice/ ansiblepractice.old
+  426  git clone https://gitlab.com/shrinathdm/ansiblepractice.git
+  435  ansible-playbook -vvv -i inventory/demo playbook/site.yml
+  436  ansible-playbook -vvv -i inventory/demo playbook/site.yml --extra-vars "@./inventory/group_vars/demo.yml"
